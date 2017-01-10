@@ -4,7 +4,7 @@
 
 ### Instrucciones
 
-0. Fork el template y elige una librería. Ponte a leer a continuación y comienza a _codear_.
+0.- Fork el template y elige una librería. Ponte a leer a continuación y comienza a _codear_.
 
 1.- tienen que usar firebase 3
 
@@ -55,7 +55,7 @@ la gracia es que es un timestamp por lo que despues el ordenar los chats se lo p
 
 ### Contribuidores
 
-E- S5 / ES6 vanilla = @juanbrujo
+- ES5 / ES6 vanilla = @juanbrujo
 - InfernoJS = @juanbrujo
 - ReactJS = @s0wk
 - NG1 = ?
