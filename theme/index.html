@@ -9,19 +9,30 @@
 <body>
 
   <div class="wrapper">
+
     <header>
       <h1>Chat BeerJS Santiago - Febrero 2017</h1>
       <h2>Integración: [ES6, React, Inferno, Vue... coloque cuál usó aquí]</h2>
     </header>
 
     <section id="main">
+
+      <div class="login">
+        <h3>Login</h3>
+        <input type="text" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button id="btn-login">Login</button>
+      </div>
+
       <div class="chat">
         <i class="avatar" class="face12"></i>
         <input type="text" placeholder="Mensaje..."> 
         <button id="btn-enviar">Enviar</button>
       </div>
       <div class="output"></div>
+
     </section>
+
   </div>
 
   <script src="https://cdn.pubnub.com/pubnub-3.7.13.min.js"></script>
