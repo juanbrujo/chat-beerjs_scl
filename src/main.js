@@ -6,8 +6,9 @@ import App from 'src/App'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#main',
   router,
   template: '<App/>',
   components: { App }
+
 })

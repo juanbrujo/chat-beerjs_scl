@@ -1,8 +1,8 @@
-import Home from './Home'
+import Chat from './chat.vue'
 // import About from './About'
 
 export {
-  Home // ,
+  Chat // ,
   // About
 }
 
