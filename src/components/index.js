@@ -1,9 +1,10 @@
-import Chat from './chat.vue'
+import ChatMessagebox from './chatMessagebox.vue'
+import ChatLog from './chatLog.vue'
 // import About from './About'
 
 export {
-  Chat // ,
-  // About
+  ChatMessagebox,
+  ChatLog
 }
 
 export default {}

@@ -1,9 +1,8 @@
-import Home from './Home'
+import Home from './Home.vue'
 // import About from './About'
 
 export {
-  Home // ,
-  // About
+  Home
 }
 
 export default {}

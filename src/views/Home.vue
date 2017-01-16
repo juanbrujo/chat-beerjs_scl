@@ -1,7 +1,7 @@
 <template>
   <section id="main">
-    <chat></chat>
-    <div class="output"></div>
+    <chat-messagebox :room="room" :userInfo="userInfo"></chat-messagebox>
+    <chat-log :messages="messages"></chat-log>
   </section>
 </template>
 

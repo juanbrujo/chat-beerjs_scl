@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -20,19 +16,6 @@ body {
   color: #fff;
 }
 
-::-webkit-scrollbar {
-    width: $scrollbar-width;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: $scrollbar-width;
-    background-color: rgba(25,147,147,0.1);
-}
-
-::-webkit-scrollbar-thumb {
-     border-radius: $scrollbar-width;
-    background-color: $chat-thread-bgd-color;
-}
 
 .wrapper {
   width: 70%;
@@ -95,4 +78,26 @@ button {
   width: 120px;
   color: #fff;
   cursor: pointer;
+}
+#main {
+  margin: 2em 1em 1em;
+}
+
+#main > h2 {
+  font-weight: normal;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+
+@media (max-width: 767px) {
+  .wrapper {
+    width: 90%;
+  }
+  h1 {
+    font-size: 1.2em;
+  }
+  h2 {
+    font-size: .8em;
+  }
 }

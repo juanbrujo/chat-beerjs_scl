@@ -47,14 +47,6 @@ export const firebaseGetAllMessages = (db, room, cb) => {
   })
 }
 
-// This is another form to make the same func but with listener... dont forget to off()
-// export const firebaseGetAllMessages = (db, room, cb) => {
-//   let route = ['rooms/', room, '/messages'].join('');
-//   db.ref(route).on('value', messages => {
-//     messages.forEach(message => { cb(message) });
-//   });
-// }
-
 // Create a listener a for every new message in the chat room and pass a callback
 export const firebaseGetLastMessage = (db, room, cb) => {
   db.ref(makeChatRoute(room)).on('child_added', cb)
