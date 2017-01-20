@@ -1,4 +1,6 @@
 .DS_Store
+.chrome-profile
+.vscode
 node_modules/
 dist/
 npm-debug.log
