@@ -1,5 +1,4 @@
 import { ChatMessagebox, ChatLog } from '../components'
-import gravatar from 'gravatar'
 import {
   firebaseConfig,
   firebaseProvider,
@@ -10,16 +9,12 @@ import {
 
 let firebase = firebaseProvider(firebaseConfig)
 
-let userInfo = {
-  email: 'davidlaym@gmail.com',
-  name: 'David Lay'
-}
 
 let componentData = {
   fb: null,
   room: 'beer-js',
   messages: [],
-  userInfo
+  userInfo: {}
 }
 
 export default {
@@ -28,11 +23,11 @@ export default {
   data () {
     return componentData
   },
-  created: function () {
+  beforeMount () {
+    componentData.userInfo.user_image_url = JSON.parse(window.localStorage.getItem('userData')).image_url
     firebase.then(fb => {
       componentData.fb = fb
-      componentData.userInfo.user_image_url = gravatar.url(componentData.userInfo.email, { s: 75, r: 'pg', d: 'retro' })
-      console.log('gravatar src', componentData.userInfo.user_image_url)
+
       this.$root.$on('sendMessage', (args) => {
         firebasePushMessage(fb, componentData.room, {
           author: {
