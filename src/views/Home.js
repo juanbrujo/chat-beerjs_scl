@@ -9,9 +9,7 @@ import {
 
 let firebase = firebaseProvider(firebaseConfig)
 
-
 let componentData = {
-  fb: null,
   room: 'beer-js',
   messages: [],
   userInfo: {}
@@ -25,9 +23,12 @@ export default {
   },
   beforeMount () {
     componentData.userInfo.user_image_url = JSON.parse(window.localStorage.getItem('userData')).image_url
-    firebase.then(fb => {
-      componentData.fb = fb
+    var room = JSON.parse(window.localStorage.getItem('userData')).room
+    if (room) {
+      componentData.room = room
+    }
 
+    firebase.then(fb => {
       this.$root.$on('sendMessage', (args) => {
         firebasePushMessage(fb, componentData.room, {
           author: {

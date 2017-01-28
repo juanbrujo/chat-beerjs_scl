@@ -9,26 +9,22 @@ export const firebaseConfig = {
   databaseURL: 'https://beer-js.firebaseio.com/'
 }
 
-// Message spec
-export const messageSpec = {
-  author: {
-    name: 'Javier Vasquez',
-    user_image_url: 'http://placekitten.com/200/200'
-  },
-  text: 'soy un nuevo mesanje del spec',
-  timestamp: '1483737061'
-}
+let provider = null
 
 // Create a new firebase isntance auth that and return a fb.database promise
 export const firebaseProvider = config => {
-  app.initializeApp(config)
+  if (!provider) {
+    console.log('creating new firebase provider')
+    app.initializeApp(config)
 
-  return auth().signInAnonymously()
-    .then(() => database())
-    .catch(error => {
-      console.log('error type', error.code)
-      console.log('error message', error.message)
-    })
+    provider = auth().signInAnonymously()
+      .then(() => database())
+      .catch(error => {
+        console.log('error type', error.code)
+        console.log('error message', error.message)
+      })
+  }
+  return provider
 }
 
 // Return a array of the availables chat rooms

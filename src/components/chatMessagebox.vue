@@ -1,6 +1,6 @@
 <template>
   <div class="chat">
-    <h3>#{{room}} <a href="/rooms">Cambiar Canal</a> </h3>
+    <h3>#{{room}} <router-link to="rooms">Cambiar Canal</a> </h3>
     <img class="avatar" :src="userInfo.user_image_url" :alt="userInfo.name" :title="userInfo.name"/>
     <input v-model="typedMessage" type="text" placeholder="Mensaje...">
     <button id="btn-enviar" @click="sendMessage(typedMessage)">Enviar</button>

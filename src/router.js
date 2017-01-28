@@ -34,16 +34,19 @@ function redirectLogedUsers (from, to, next) {
 
 const routes = [
   { path: '/',
+    name: 'home',
     component: Home,
     beforeEnter: redirectNotLogedUsers
   },
   {
     path: '/login',
+    name: 'login',
     component: Login,
     beforeEnter: redirectLogedUsers
   },
   {
     path: '/rooms',
+    name: 'rooms',
     component: Rooms,
     beforeEnter: redirectNotLogedUsers
   }
@@ -51,8 +54,7 @@ const routes = [
 
 /* eslint-disable no-new */
 var router = new VueRouter({
-  routes,
-  mode: 'history'
+  routes
 })
 
 export default router
