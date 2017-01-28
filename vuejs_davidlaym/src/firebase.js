@@ -55,6 +55,7 @@ export const firebaseRemoveListener = (db, room, cb) => {
 
 // Push a new message to the chat room
 export const firebasePushMessage = (db, room, message) => {
+  console.log('pushing message', message)
   db.ref(makeChatRoute(room)).push(message)
 }
 

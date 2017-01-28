@@ -4,10 +4,12 @@ import {
   firebaseProvider,
   firebaseGetAllMessages,
   firebaseGetLastMessage,
-  firebasePushMessage
+  firebasePushMessage,
+  firebaseRemoveListener
 } from '../firebase'
 
 let firebase = firebaseProvider(firebaseConfig)
+let db = null
 
 let componentData = {
   room: 'beer-js',
@@ -22,13 +24,16 @@ export default {
     return componentData
   },
   beforeMount () {
-    componentData.userInfo.user_image_url = JSON.parse(window.localStorage.getItem('userData')).image_url
-    var room = JSON.parse(window.localStorage.getItem('userData')).room
+    let storedUserData = JSON.parse(window.localStorage.getItem('userData'))
+    componentData.userInfo.user_image_url = storedUserData.image_url
+    componentData.userInfo.name = storedUserData.name
+    var room = storedUserData.room
     if (room) {
       componentData.room = room
     }
 
     firebase.then(fb => {
+      db = fb
       this.$root.$on('sendMessage', (args) => {
         firebasePushMessage(fb, componentData.room, {
           author: {
@@ -47,5 +52,9 @@ export default {
         componentData.messages.unshift(msg.val())
       })
     })
+  },
+  beforeDestroy () {
+    this.$root.$off('sendMessage')
+    firebaseRemoveListener(db, componentData.room)
   }
 }
