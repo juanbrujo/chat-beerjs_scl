@@ -1,9 +1,11 @@
 import Home from './Home.vue'
 import Login from './Login.vue'
+import Rooms from './Rooms.vue'
 
 export {
   Home,
-  Login
+  Login,
+  Rooms
 }
 
 export default {}

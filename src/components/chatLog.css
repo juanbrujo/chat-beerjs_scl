@@ -1,5 +1,9 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
+.output{
+  margin-top:40px;
+}
+
 .output p {
   font-size: 1.2em;
   margin: 0.6em;
