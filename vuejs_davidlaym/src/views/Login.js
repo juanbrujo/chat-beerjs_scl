@@ -1,8 +1,7 @@
 import gravatar from 'gravatar'
 
 export default {
-  components: {
-  },
+  components: {},
   name: 'Login',
   data () {
     return {
