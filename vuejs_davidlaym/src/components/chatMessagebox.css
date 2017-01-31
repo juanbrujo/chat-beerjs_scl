@@ -1,0 +1,32 @@
+
+.chat {
+  height: 85px;
+  position: relative;
+  clear: both;
+}
+
+.chat img {
+  position: absolute;
+  background: rgba(255,255,255,.5);
+  border-radius: 10px;
+  width: 65px;
+  height: 65px;
+}
+.chat h3 {
+  margin-bottom: 10px;
+}
+.chat h3 a, .chat h3 a:visited, .chat h3 a:hover {
+  color: #0EC879;
+  font-size: 14px;
+  text-decoration: none;
+}
+ .chat h3 a:hover {
+  text-decoration: underline;
+}
+
+.avatar {
+  border-radius: 50px;
+  height: 50px;
+  margin-right: 25px;
+  width: 50px;
+}
