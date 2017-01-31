@@ -8,7 +8,6 @@
   /** @ngInject */
   function config($logProvider, $locationProvider) {
     $logProvider.debugEnabled(true);
-    $locationProvider.html5Mode(true)
   }
 
 

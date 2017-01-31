@@ -10,6 +10,10 @@
       var vm = this;
       var room = $state.params.room;
 
+      if(!FirebaseWrapper.isAuthenticated()){
+        $state.go('beer.signin');
+      }
+
       vm.model = {
         message: null
       };
