@@ -57,7 +57,6 @@
       this.onMessage = function(room, callback){
         firebase.database().ref(getRoomPath(room)).on('child_added', function(message){
           var _message = message.val();
-          console.log(_message);
           _message.timestamp = decode(message.key);
 
           if(_message.timestamp != NaN && _message.timestamp != undefined){
